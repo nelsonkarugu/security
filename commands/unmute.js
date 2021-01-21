@@ -14,7 +14,7 @@ module.exports = {
             
 
         } else {
-            message.channel.send('cant find that member!')
+            message.channel.send('I cant find that member, please try again!')
         }
 
 
