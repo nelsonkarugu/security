@@ -9,10 +9,11 @@ module.exports = {
             message.channel.send('You have the permission to kick members')
         };
 
-        if (message.member.roles.cache.has('799504688847781888')) {
-            message.channel.send('Security bot is online and operational!');
+        if (message.member.roles.cache.has('854149349716787211')) {
+            message.channel.send('Warden bot is online and operational!');
 
-        } else {
+        } 
+        else {
             message.channel.send('I see you dont have the right permissions, please contact the moderator!');
         }
     }

@@ -2,6 +2,7 @@ const Discord = require('discord.js');
 const client = new Discord.Client();
 const { description } = require("./ping");
 
+
 module.exports = {
     name: 'kick',
     description: 'kick from server',
@@ -10,10 +11,10 @@ module.exports = {
         if(message.member.roles.cache.has('799504688847781888'), member) {
             const memberTarget = message.guild.members.cache.get(member.id);
             memberTarget.kick().catch(console.log);
-            message.channel.send("user has been kicked");
+            message.channel.send("User has been kicked");
 
         } else{
-            message.channel.send('you could not kick that member');
+            message.channel.send('You could not kick that member');
         }
     }
 

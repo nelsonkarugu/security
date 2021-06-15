@@ -6,6 +6,8 @@ const client = new Discord.Client();
 const prefix = '-';//if you want to send a command, your command must start with the - symbol.
 const fs = require('fs');
 
+
+
 client.commands = new Discord.Collection();
 
 //read commands folder
@@ -18,7 +20,7 @@ for (const file of commandFiles) {
 
 
 client.once('ready', () => {
-    console.log('security is online!');//print to console when succesfully connected to discord
+    console.log('security is online!');         //print to console when succesfully connected to discord
 });
 
 
@@ -33,9 +35,12 @@ client.on('guildMemberAdd', guildMember => {
 
 
 client.on('message', message => {
+    // Warn users when they use innapropriate language.
+    if (message.content === 'fuck' | message.content === 'shit'  | message.content === 'nigga'  | message.content === 'bitch'  | message.content === 'mother fucker'  | message.content === 'fucker'  | message.content === 'Fuck'  | message.content === 'Asshole'  | message.content === 'fucker'  | message.content === 'asshole') {
+        client.commands.get('language').execute(message);
+         
+    }
     if (!message.content.startsWith(prefix) || message.author.bot) return;
-
-
     const args = message.content.slice(prefix.length).split(/ +/);
     const command = args.shift().toLowerCase();
 
@@ -56,8 +61,25 @@ client.on('message', message => {
     else if (command == 'unmute') {
         client.commands.get('unmute').execute(message, args)
     }
+    
+
 
 });
+// client.on('message', message => {
+//     const Words = ["fuck", "shit", "nigga", "bitch", "mother fucker", "fucker", "Fuck", "Asshole"];
+//     if (message.content.charAt(0,7)) {
+//         console.log("Bad words used")
+//         client.commands.get('language').execute(message);
+//         return
+//     }
+// });
+
+// client.on('message', message => {
+//     if (message.content === Words) {
+//         console.log("Bad words used")
+//         client.commands.get('language').execute(message, args);
+//     }
+// });
 
 
 client.login(TOKEN);
