@@ -62,21 +62,6 @@ client.on('message', message => {
 
 
 });
-// client.on('message', message => {
-//     const Words = ["fuck", "shit", "nigga", "bitch", "mother fucker", "fucker", "Fuck", "Asshole"];
-//     if (message.content.charAt(0,7)) {
-//         console.log("Bad words used")
-//         client.commands.get('language').execute(message);
-//         return
-//     }
-// });
-
-// client.on('message', message => {
-//     if (message.content === Words) {
-//         console.log("Bad words used")
-//         client.commands.get('language').execute(message, args);
-//     }
-// });
 
 
 client.login(TOKEN);
