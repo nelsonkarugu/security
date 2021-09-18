@@ -36,10 +36,7 @@ client.on('guildMemberAdd', guildMember => {
 
 client.on('message', message => {
     // Warn users when they use innapropriate language.
-    if (message.content === 'fuck' | message.content === 'shit'  | message.content === 'nigga'  | message.content === 'bitch'  | message.content === 'mother fucker'  | message.content === 'fucker'  | message.content === 'Fuck'  | message.content === 'Asshole'  | message.content === 'fucker'  | message.content === 'asshole') {
-        client.commands.get('language').execute(message);
-         
-    }
+    
     if (!message.content.startsWith(prefix) || message.author.bot) return;
     const args = message.content.slice(prefix.length).split(/ +/);
     const command = args.shift().toLowerCase();
