@@ -35,7 +35,7 @@ client.on('guildMemberAdd', guildMember => {
 
 
 client.on('message', message => {
-    // Warn users when they use innapropriate language.
+
     
     if (!message.content.startsWith(prefix) || message.author.bot) return;
     const args = message.content.slice(prefix.length).split(/ +/);
